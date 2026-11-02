@@ -35,13 +35,18 @@
   }
   @keyframes circleIn { to { opacity: 1; transform: scale(1); } }
   .circle img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .name, .role, .presentation {
+  .name, .role, .presentation, .subjects {
     opacity: 0; transform: translateY(12px);
     animation: fadeUp .6s ease forwards;
   }
-  .name { animation-delay: 2.85s; font-size: 19px; font-weight: bold; margin: 0 0 6px; color: #111; }
+  .name { animation-delay: 2.85s; font-size: 16px; font-weight: bold; margin: 0 0 6px; color: #111; }
   .role { animation-delay: 3.05s; font-size: 16px; margin: 0 0 18px; color: #555; }
   .presentation { animation-delay: 3.25s; font-size: 16px; line-height: 1.6; text-align: justify; margin: 0; color: #333; }
+  .subjects { animation-delay: 3.45s; margin-top: 22px; border-top: 1px solid #e5e5e5; padding-top: 18px; text-align: left; }
+  .subjects h3 { font-size: 16px; font-weight: bold; margin: 0 0 10px; color: #111; text-align: center; }
+  .subjects ul { margin: 0; padding-left: 20px; font-size: 15px; line-height: 1.6; color: #333; }
+  .subjects li { margin-bottom: 4px; }
+  .subjects .roles { margin: 14px 0 0; font-size: 15px; color: #555; text-align: center; }
   @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
 </style>
 </head>
@@ -56,6 +61,23 @@
     <p class="presentation" style="margin-top:12px;">Posteriormente y desde entonces, ejerzo como jurista independiente en ramas como Civil, Mercantil e Internacional, asesorando instituciones en materia de relaciones internacionales desde un enfoque legal y organizacional.</p>
     <p class="presentation" style="margin-top:12px;">En cuanto a Ciencia Política, me desempeño en asesorías de políticas privadas, desarrollo organizacional y análisis político.</p>
     <p class="presentation" style="margin-top:12px;">Espero compartir con todos y que juntos aprendamos en el camino.</p>
+    <div class="subjects">
+      <h3>Asignaturas impartidas</h3>
+      <ul>
+        <li>Introducción al Derecho</li>
+        <li>Derecho Constitucional</li>
+        <li>Ideas Políticas I</li>
+        <li>Ideas Políticas II</li>
+        <li>Sistemas Ideológicos</li>
+        <li>Sistemas Electorales</li>
+        <li>Sociología Política</li>
+        <li>Sociología de la Comunicación</li>
+        <li>Derecho Internacional I</li>
+        <li>Derecho Internacional II</li>
+        <li>Geopolítica y Desarrollo</li>
+      </ul>
+      <p class="roles">Tutor de Pregrado y Jurado Evaluador</p>
+    </div>
   </div>
 <script>
   // Secuencia: círculo (0,1-0,6 s) -> animación (0,6-2,7 s) -> nombre y texto.
