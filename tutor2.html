@@ -39,7 +39,7 @@
     opacity: 0; transform: translateY(12px);
     animation: fadeUp .6s ease forwards;
   }
-  .name { animation-delay: 2.85s; font-size: 24px; font-weight: bold; margin: 0 0 6px; color: #111; }
+  .name { animation-delay: 2.85s; font-size: 19px; font-weight: bold; margin: 0 0 6px; color: #111; }
   .role { animation-delay: 3.05s; font-size: 16px; margin: 0 0 18px; color: #555; }
   .presentation { animation-delay: 3.25s; font-size: 16px; line-height: 1.6; text-align: justify; margin: 0; color: #333; }
   @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
@@ -58,12 +58,14 @@
     <p class="presentation" style="margin-top:12px;">Espero compartir con todos y que juntos aprendamos en el camino.</p>
   </div>
 <script>
-  // Secuencia: círculo (0,1-0,6 s) -> animación (0,6-2,69 s) -> nombre y texto.
-  // La foto animada se cambia a su último cuadro exacto antes de que vuelva a empezar,
-  // así queda quieta en el primer plano y no entra en bucle.
+  // Secuencia: círculo (0,1-0,6 s) -> animación (0,6-2,7 s) -> nombre y texto.
+  // El WebP ya juega una sola vez por su propio contador de bucle (loop=1) y
+  // queda quieto en el último cuadro. El cambio a la foto estática a los 3,4 s
+  // es solo un respaldo, bien después de que terminó, nunca antes de que acabe,
+  // para que no pueda reiniciarse.
   var foto = document.getElementById('tutorFoto');
   setTimeout(function () { foto.src = 'Tutor_Animado_400.webp'; }, 600);
-  setTimeout(function () { foto.src = 'Tutor_Ultimo_Cuadro.webp'; }, 2690);
+  setTimeout(function () { foto.src = 'Tutor_Ultimo_Cuadro.webp'; }, 3400);
 </script>
 </body>
 </html>
