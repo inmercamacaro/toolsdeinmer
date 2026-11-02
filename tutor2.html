@@ -1,103 +1,69 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            background: transparent; 
-            display: flex; 
-            justify-content: center; 
-            padding: 0; 
-            font-family: 'Segoe UI', Tahoma, sans-serif;
-        }
-        .tutor-card {
-            width: 100%;
-            max-width: 700px;
-            background: #ffffff;
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-            border: 1px solid #f0f0f0;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            animation: fadeIn 0.8s ease-out forwards;
-        }
-        .header-section {
-            background: #fafafa;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 25px 15px;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        .profile-img {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid #ffffff;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            opacity: 0;
-            animation: dropIn 0.8s ease-out 0.3s forwards;
-        }
-        .profile-name {
-            margin-top: 12px;
-            font-size: 22px;
-            color: #1a1a1a;
-            font-weight: 700;
-            opacity: 0;
-            animation: dropIn 0.6s ease-out 0.6s forwards;
-        }
-        .profile-title {
-            font-size: 14px;
-            color: #555;
-            opacity: 0;
-            animation: dropIn 0.6s ease-out 0.8s forwards;
-        }
-        .content-section {
-            padding: 20px 15px; /* Margen reducido para móviles */
-            color: #333;
-        }
-        .text-content p {
-            font-size: 13.5px;
-            line-height: 1.6;
-            text-align: justify;
-            margin-bottom: 12px;
-            opacity: 0;
-            transform: translateX(-20px);
-        }
-        .p1 { animation: slideRight 0.6s ease-out 1.5s forwards; }
-        .p2 { animation: slideRight 0.6s ease-out 2.2s forwards; }
-        .p3 { animation: slideRight 0.6s ease-out 2.9s forwards; }
-        .p4 { 
-            animation: slideRight 0.6s ease-out 3.6s forwards; 
-            text-align: center !important; 
-            color: #7a0700; 
-            margin-top: 15px;
-            font-weight: 600;
-        }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        @keyframes dropIn { from { opacity: 0; transform: translateY(-50px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes slideRight { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>¿Quién es tu tutor?</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: transparent; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex; justify-content: center;
+    padding: 16px;
+    color: #222;
+  }
+  .card {
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(0,0,0,.14);
+    max-width: 560px; width: 100%;
+    padding: 32px 28px 28px;
+    text-align: center;
+    animation: cardIn .45s ease both;
+  }
+  @keyframes cardIn { from { opacity: 0; } to { opacity: 1; } }
+  .circle {
+    width: 180px; height: 180px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #ffffff;
+    box-shadow: 0 4px 18px rgba(0,0,0,.18);
+    opacity: 0; transform: scale(.85);
+    animation: circleIn .5s ease .1s forwards;
+  }
+  @keyframes circleIn { to { opacity: 1; transform: scale(1); } }
+  .circle img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .name, .role, .presentation {
+    opacity: 0; transform: translateY(12px);
+    animation: fadeUp .6s ease forwards;
+  }
+  .name { animation-delay: 2.85s; font-size: 24px; font-weight: bold; margin: 0 0 6px; color: #111; }
+  .role { animation-delay: 3.05s; font-size: 16px; margin: 0 0 18px; color: #555; }
+  .presentation { animation-delay: 3.25s; font-size: 16px; line-height: 1.6; text-align: justify; margin: 0; color: #333; }
+  @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+</style>
 </head>
 <body>
-    <div class="tutor-card">
-        <div class="header-section">
-            <img src="https://inmercamacaro.github.io/toolsdeinmer/perfil-420-q92.webp" width="140" height="140" alt="Inmer Camacaro" onerror="this.onerror=null;this.src='https://i.postimg.cc/ZRYP6VC3/perfil1-ezgif-com-png-to-webp-converter.webp'" class="profile-img">
-            <div class="profile-name">Inmer Camacaro</div>
-            <div class="profile-title">Abogado y Licenciado en Ciencia Política</div>
-        </div>
-        <div class="content-section">
-            <div class="text-content">
-                <p class="p1">Hola, es un gusto acompañarlos en este curso, mi nombre es <strong>Inmer Camacaro</strong>, <strong>Abogado</strong> y <strong>Politólogo</strong> egresado de la UFT. En mi trayectoria profesional integré el Poder Judicial en cargos de <em>Asistente, Secretario y Relator</em> en Juzgados de Primera Instancia en lo Civil, Mercantil y del Tránsito de la Circunscripción Judicial del estado Lara.</p>
-                <p class="p2">Posteriormente y desde entonces, ejerzo como jurista independiente en ramas como Civil, Mercantil e Internacional, asesorando instituciones en materia de relaciones internacionales desde un enfoque legal y organizacional.</p>
-                <p class="p3">En cuanto a Ciencia Política, me desempeño en asesorías de políticas privadas, desarrollo organizacional y análisis político.</p>
-                <p class="p4">Espero compartir con todos y que juntos aprendamos en el camino.</p>
-            </div>
-        </div>
+  <div class="card">
+    <div class="circle">
+      <img id="tutorFoto" src="Tutor_Primer_Cuadro.webp" alt="Prof. Inmer J. Camacaro C.">
     </div>
+    <h2 class="name">Prof. Inmer J. Camacaro C.</h2>
+    <p class="role">Abogado y Politólogo</p>
+    <p class="presentation">Hola, es un gusto acompañarlos en este curso, mi nombre es <strong>Inmer Camacaro</strong>, <strong>Abogado</strong> y <strong>Politólogo</strong> egresado de la UFT. En mi trayectoria profesional integré el Poder Judicial en cargos de <em>Asistente, Secretario y Relator</em> en Juzgados de Primera Instancia en lo Civil, Mercantil y del Tránsito de la Circunscripción Judicial del estado Lara.</p>
+    <p class="presentation" style="margin-top:12px;">Posteriormente y desde entonces, ejerzo como jurista independiente en ramas como Civil, Mercantil e Internacional, asesorando instituciones en materia de relaciones internacionales desde un enfoque legal y organizacional.</p>
+    <p class="presentation" style="margin-top:12px;">En cuanto a Ciencia Política, me desempeño en asesorías de políticas privadas, desarrollo organizacional y análisis político.</p>
+    <p class="presentation" style="margin-top:12px;">Espero compartir con todos y que juntos aprendamos en el camino.</p>
+  </div>
+<script>
+  // Secuencia: círculo (0,1-0,6 s) -> animación (0,6-2,69 s) -> nombre y texto.
+  // La foto animada se cambia a su último cuadro exacto antes de que vuelva a empezar,
+  // así queda quieta en el primer plano y no entra en bucle.
+  var foto = document.getElementById('tutorFoto');
+  setTimeout(function () { foto.src = 'Tutor_Animado_400.webp'; }, 600);
+  setTimeout(function () { foto.src = 'Tutor_Ultimo_Cuadro.webp'; }, 2690);
+</script>
 </body>
 </html>
