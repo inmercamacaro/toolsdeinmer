@@ -59,13 +59,13 @@
   </div>
 <script>
   // Secuencia: círculo (0,1-0,6 s) -> animación (0,6-2,7 s) -> nombre y texto.
-  // El WebP ya juega una sola vez por su propio contador de bucle (loop=1) y
-  // queda quieto en el último cuadro. El cambio a la foto estática a los 3,4 s
-  // es solo un respaldo, bien después de que terminó, nunca antes de que acabe,
-  // para que no pueda reiniciarse.
+  // v3: el WebP tiene nombre nuevo (v2) para que ningún navegador sirva el
+  // archivo viejo guardado en caché, y juega una sola vez por su propio
+  // contador de bucle (loop=1), quedando quieto en el último cuadro.
+  // NO hay ningún cambio de vuelta a la foto estática después de la
+  // animación, porque ese cambio era el que provocaba el salto atrás.
   var foto = document.getElementById('tutorFoto');
-  setTimeout(function () { foto.src = 'Tutor_Animado_400.webp'; }, 600);
-  setTimeout(function () { foto.src = 'Tutor_Ultimo_Cuadro.webp'; }, 3400);
+  setTimeout(function () { foto.src = 'Tutor_Animado_400_v2.webp'; }, 600);
 </script>
 </body>
 </html>
